@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Larry Costa | Construction Technology & Web Development</title>
+<meta name="description" content="Portfolio of Larry Costa, a Building Construction Technology student, construction site professional, AutoCAD user and self-taught web developer in Nairobi, Kenya.">
+<style>
+:root{
+  --bg:#0b0f14; --panel:#111820; --panel2:#17212b; --text:#f4f7fa;
+  --muted:#a9b4bf; --accent:#f5a623; --line:#26323d; --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;background:rgba(11,15,20,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:.08em}.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:26px;color:var(--muted);font-size:.92rem}
+.nav-links a:hover{color:var(--white)}
+.hero{min-height:100vh;display:grid;align-items:center;padding:120px 0 70px;background:
+radial-gradient(circle at 80% 20%,rgba(245,166,35,.13),transparent 30%),
+linear-gradient(135deg,#0b0f14 0%,#101820 100%)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center}
+.eyebrow{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:.8rem;margin-bottom:18px}
+h1{font-size:clamp(3.2rem,7vw,6.3rem);line-height:.92;letter-spacing:-.055em;margin-bottom:25px}
+h1 span{color:var(--accent)}
+.hero p{font-size:1.1rem;color:var(--muted);max-width:680px}
+.buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.btn{padding:13px 20px;border:1px solid var(--line);border-radius:10px;font-weight:700;display:inline-block}
+.btn.primary{background:var(--accent);color:#111;border-color:var(--accent)}
+.btn:hover{transform:translateY(-2px)}
+.hero-card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:24px;padding:32px;box-shadow:0 25px 80px rgba(0,0,0,.28)}
+.initials{width:100px;height:100px;border-radius:22px;background:var(--accent);color:#111;display:grid;place-items:center;font-size:2.3rem;font-weight:900;margin-bottom:28px}
+.hero-card h3{font-size:1.35rem;margin-bottom:8px}
+.hero-card p{font-size:.95rem}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:25px}
+.stat{padding:16px;background:rgba(255,255,255,.035);border-radius:12px}
+.stat strong{display:block;font-size:1.1rem}.stat small{color:var(--muted)}
+section{padding:100px 0}
+.section-head{margin-bottom:45px}
+.section-head .eyebrow{margin-bottom:8px}
+.section-head h2{font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.04em}
+.section-head p{color:var(--muted);max-width:700px;margin-top:10px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px}
+.about-text p{color:var(--muted);margin-bottom:18px}
+.highlight{border-left:3px solid var(--accent);padding-left:22px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);padding:28px;border-radius:18px}
+.card h3{margin-bottom:8px}.card p,.card li{color:var(--muted)}
+.card ul{padding-left:18px;margin-top:14px}
+.timeline{border-left:1px solid var(--line);margin-left:8px}
+.timeline-item{position:relative;padding:0 0 45px 34px}
+.timeline-item:before{content:"";position:absolute;left:-6px;top:6px;width:11px;height:11px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 5px var(--bg)}
+.date{color:var(--accent);font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.timeline-item h3{font-size:1.35rem;margin:7px 0}.timeline-item h4{color:var(--muted);font-weight:500;margin-bottom:12px}
+.timeline-item ul{padding-left:18px;color:var(--muted)}
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skill{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:22px}
+.skill h3{font-size:1rem;margin-bottom:12px;color:var(--accent)}
+.skill p{color:var(--muted);font-size:.93rem}
+.tags{display:flex;flex-wrap:wrap;gap:9px}.tag{padding:8px 11px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.85rem}
+.contact{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:45px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact h2{font-size:2.5rem;line-height:1.05}.contact p{color:var(--muted);margin-top:12px}
+.contact-links{display:grid;gap:13px}.contact-link{padding:16px 18px;background:rgba(255,255,255,.035);border-radius:12px;border:1px solid var(--line)}
+.contact-link small{display:block;color:var(--muted);margin-bottom:2px}
+footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+@media(max-width:800px){
+  .nav-links{display:none}.hero-grid,.about-grid,.contact{grid-template-columns:1fr}.cards,.skill-grid{grid-template-columns:1fr}
+  h1{font-size:3.6rem}.hero{padding-top:110px}.contact{padding:30px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home">LARRY<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Building Construction Technology · Digital Technology</div>
+      <h1>Larry <span>Costa</span></h1>
+      <p>A second-year Building Construction Technology student in Nairobi combining hands-on construction experience, site safety, AutoCAD, engineering administration and self-taught web development.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#experience">View Experience</a>
+        <a class="btn" href="#contact">Get In Touch</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <div class="initials">LC</div>
+      <h3>Construction × Technology</h3>
+      <p>Interested in practical problem-solving across construction, engineering and digital environments.</p>
+      <div class="stats">
+        <div class="stat"><strong>2nd Year</strong><small>Bachelor of Building Construction Technology</small></div>
+        <div class="stat"><strong>AutoCAD</strong><small>Drafting & site layouts</small></div>
+        <div class="stat"><strong>Web Dev</strong><small>Self-taught</small></div>
+        <div class="stat"><strong>Nairobi</strong><small>Kenya</small></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="about">
+<div class="container">
+  <div class="section-head"><div class="eyebrow">01 — About</div><h2>Practical skills. Digital mindset.</h2></div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I am a motivated Bachelor of Building Construction Technology student at the Technical University of Kenya with practical exposure to construction site safety, engineering administration, supervision and site documentation.</p>
+      <p>My experience includes conducting toolbox talks, preparing daily and weekly reports, monitoring site activities and using AutoCAD to examine and redesign site layouts.</p>
+      <p>Alongside construction, I am a self-taught web developer and designer. I enjoy learning independently, experimenting with technology and turning problems into practical digital solutions.</p>
+    </div>
+    <div class="highlight">
+      <h3>What I bring</h3>
+      <div class="tags" style="margin-top:18px">
+        <span class="tag">Site Safety</span><span class="tag">AutoCAD</span><span class="tag">Site Supervision</span>
+        <span class="tag">Engineering Admin</span><span class="tag">Web Development</span><span class="tag">Customer Success</span>
+        <span class="tag">Problem Solving</span><span class="tag">Teamwork</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="experience">
+<div class="container">
+  <div class="section-head"><div class="eyebrow">02 — Experience</div><h2>Where I’ve worked.</h2></div>
+  <div class="timeline">
+    <article class="timeline-item">
+      <div class="date">Construction & Engineering</div>
+      <h3>Site Safety Officer / Secretary to Lead Engineer</h3>
+      <h4>Baran Telecom Networks Kenya — Off-grid Solar Access Project, Lot 8</h4>
+      <ul>
+        <li>Supported safety standards and procedures across construction activities.</li>
+        <li>Conducted toolbox talks and safety briefings for workers.</li>
+        <li>Prepared and maintained daily and weekly site reports.</li>
+        <li>Monitored workers and site activities for compliance with safety requirements.</li>
+        <li>Supported the Lead Engineer with documentation, communication and organization.</li>
+        <li>Assisted with small construction activities when the foreman or site engineer was unavailable.</li>
+        <li>Used AutoCAD to examine, interpret, redesign and adjust site layouts.</li>
+      </ul>
+    </article>
+    <article class="timeline-item">
+      <div class="date">Customer Experience</div>
+      <h3>Customer Success</h3>
+      <h4>Indvstry Clvb — Nairobi, Kenya</h4>
+      <ul>
+        <li>Supported customers and helped deliver a smooth customer experience.</li>
+        <li>Managed online ticketing operations and assisted with ticket purchases.</li>
+        <li>Responded to customer inquiries and ticket-related issues.</li>
+        <li>Communicated through digital platforms to provide accurate information and resolve concerns.</li>
+        <li>Worked with a team to support events and customer experience.</li>
+      </ul>
+    </article>
+  </div>
+</div>
+</section>
+
+<section id="skills">
+<div class="container">
+  <div class="section-head"><div class="eyebrow">03 — Skills</div><h2>Tools & capabilities.</h2></div>
+  <div class="skill-grid">
+    <div class="skill"><h3>Construction</h3><p>Construction site supervision, occupational health and safety, site documentation, project coordination and construction activity monitoring.</p></div>
+    <div class="skill"><h3>AutoCAD</h3><p>Drafting, site layout interpretation, examination, redesign and adjustment of layouts.</p></div>
+    <div class="skill"><h3>Web Development</h3><p>Self-taught coding, website design and development, web application development and independent technical learning.</p></div>
+    <div class="skill"><h3>Engineering Administration</h3><p>Daily and weekly reporting, documentation, communication, record keeping and coordination with site teams.</p></div>
+    <div class="skill"><h3>Customer Success</h3><p>Customer communication, ticketing operations, issue resolution and digital customer support.</p></div>
+    <div class="skill"><h3>Professional</h3><p>Communication, leadership, teamwork, organization, time management, adaptability and problem-solving.</p></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <div class="section-head"><div class="eyebrow">04 — Education</div><h2>Academic journey.</h2></div>
+  <div class="cards">
+    <div class="card"><h3>Technical University of Kenya</h3><p>Bachelor of Building Construction Technology</p><p style="margin-top:12px">Currently in Second Year</p></div>
+    <div class="card"><h3>A.I.C Chebisaas Boys' National School</h3><p>Kenya Certificate of Secondary Education (KCSE)</p><p style="margin-top:12px">Grade: B (Plain) · Completed 23 November 2024</p></div>
+  </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+  <div class="contact">
+    <div>
+      <div class="eyebrow">05 — Contact</div>
+      <h2>Let’s connect.</h2>
+      <p>For opportunities, collaborations or professional inquiries, feel free to reach out.</p>
+    </div>
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:Larrycostaokaka@gmail.com"><small>Email</small>Larrycostaokaka@gmail.com</a>
+      <a class="contact-link" href="tel:+25468419246"><small>Phone</small>+254 684 19246</a>
+      <div class="contact-link"><small>Location</small>Nairobi, Kenya</div>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">© 2026 Larry Costa · Building Construction Technology & Digital Development</div>
+</footer>
+</body>
+</html>
